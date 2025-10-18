@@ -1,49 +1,25 @@
-const numero = window.prompt('Digite um número');
-// let numero = prompt('Digite um número');
- numero = Number(numero);
-let RaizQ = (numero ** 0.5);
-let UpArredondo = Math.ceil(numero);
+const numero = Number(prompt('Digite um número'));
+const numeroTitulo = document.getElementById('numero-titulo');
 
-const numeroTitulo = document.getElementById('numero-titulo');        
+let RaizQ = (numero ** 0.5);
+let NaN1 = (Number.isNaN(numero));
+let UpArredondo = Math.ceil(numero);
+let DownArredondo = Math.floor(numero);
+let CasaDec = numero.toFixed(2);
+
+const inteiro = document.getElementById('inteiro');
 const texto = document.getElementById('texto');
 const CalcRaiz = document.getElementById('CalcRaiz');
-const NaN = document.getElementById('Nan');
+const NaNHTML = document.getElementById('NaN');
 const UpArre = document.getElementById('UpArre');
+const DownArre = document.getElementById('DownArre');
+const CasaDecHtml = document.getElementById('CasaDec');
 
-
+inteiro.innerHTML = `${numero} é inteiro:${Number.isInteger(numero)}`;
+numeroTitulo.innerHTML = `Seu número é: ${numero}`;
+texto.innerHTML = `Seu numero + 2 é: ${numero + 2}.`;
 CalcRaiz.innerHTML = `Raiz Quadrada é: ${RaizQ}`;
-numeroTitulo.innerHTML = `Seu número é: ${numeroTitulo}`;
-texto.innerHTML = `<p>Seu numero + 2 é: ${numero + 2}.</p>`;
-UpArre.innerHTML = `Arrendodando para cima ${UpArredondo}`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-        let RaizQ = (Digite ** 0.5);
-        console.log(RaizQ);
-        document.body.innerHTML +=`${RaizQ} <br/>` 
-        document.body.innerHTML += `${Digite} é inteiro: ${Number.isInteger()} <br/>`
-        */
+NaNHTML.innerHTML = `NaN é: ${NaN1}`
+UpArre.innerHTML = `Arrendodando para cima: ${UpArredondo}`;
+DownArre.innerHTML = `Arredondado para baixo: ${DownArredondo}`;
+CasaDecHtml.innerHTML = `Com duas casas decimais: ${CasaDec}`;
